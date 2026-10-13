@@ -7,7 +7,6 @@ import java.util.HashMap;
  */
 public class PhoneBook
 {
-    // instance variables - replace the example below with your own
     private HashMap<String, String> phonebook;
 
     /**
@@ -15,7 +14,6 @@ public class PhoneBook
      */
     public PhoneBook()
     {
-        // initialise instance variables
         phonebook = new HashMap<>();
     }
     
@@ -24,8 +22,18 @@ public class PhoneBook
         phonebook.put(name, number);
     }
     
-    public String lookupNumber(String name){
+    public String lookUpNumber(String name){
         String number = phonebook.get(name);
         return number;
+    }
+    
+    public boolean containsName(String name){
+        return phonebook.containsKey(name);
+    }
+    
+    public void printAllNames(){
+        for(String name: phonebook.keySet()){
+            System.out.println(name);
+        }
     }
 }
